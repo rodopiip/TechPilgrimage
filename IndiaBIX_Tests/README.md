@@ -1,53 +1,20 @@
-# TechPilgrimage
+# IndiaBix Online Java Programming Test Results
 
-## Introduction
+Welcome to the **IndiaBix** folder. Here you will find detailed results of the Online Java Programming Tests taken. The results will help track progress and identify areas for improvement. 
 
-Hello! I am an architectural graduate with a master's degree in architecture, and I have recently completed a 6-month course in Java focusing on backend development. The aim of this repository is to document my journey as I expand my skill set in the tech industry.
+## Test Results (as of 14th June 2023):
 
-## Interests and Objectives
+| Test Number | Score |
+| ----------- | ----- |
+| 0           | 4/20  |
+| 1           | 7/20  |
+| 2           | 11/20 |
+| 3           | 10/20 |
+| 4           | 14/20 |
+| 5           | 10/20 |
+| 6           | 10/20 |
+| 7           | 15/20 |
+| 8           | 12/20 |
 
-After gaining significant experience in architecture, I'm interested in merging my design skills with my newfound passion for programming. I believe my architectural background gives me a unique perspective on programming and problem solving. Currently, I'm more inclined towards programming but am actively exploring hybrid roles that can synergize both fields.
+Note: These are the scores as of the current date (14.06.2023). The user is still undertaking more tests. Stay tuned for more updates.
 
-## Content
-
-This repository documents my daily practice and learning progress in the following areas:
-
-- SQL queries
-- Programming tests from IndiaBIX
-- Learning Docker (yet to start)
-- Exploring Jira (yet to start)
-- Handling Geospatial data (yet to start)
-- IntelliJ Projects
-
-Each of these topics has a dedicated directory in this repository.
-
-## Repository Structure
-
-Each directory will have its README that gives a brief overview of the content and progress made in each area.
-
-```
-├── SQL Queries
-│   ├── README.md
-│   ├── queries.sql
-│   └── solutions.sql
-├── IndiaBIX Tests
-│   ├── README.md
-│   ├── test1.java
-│   ├── test2.java
-│   └── ...
-├── Docker
-│   └── README.md
-├── Jira
-│   └── README.md
-├── Geospatial Data
-│   └── README.md
-├── GeoPandas
-│   └── README.md
-└── IntelliJ Projects
-    ├── README.md
-    └── project_files
-```
-
-## Contact
-
-For more information, please feel free to [contact me](mailto:maria.st.radeva@gmail.com).
