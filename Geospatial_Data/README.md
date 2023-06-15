@@ -1,53 +1,22 @@
-# TechPilgrimage
+# Geospatial Data
 
-## Introduction
+## Update - Initial Learning Phase
 
-Hello! I am an architectural graduate with a master's degree in architecture, and I have recently completed a 6-month course in Java focusing on backend development. The aim of this repository is to document my journey as I expand my skill set in the tech industry.
+I have begun my theoretical preparation for a small-scale project using Python and GeoPandas. The aim of this project is to leverage the capabilities of GeoPandas for spatial data analysis.
 
-## Interests and Objectives
+Here's a brief overview of what I've studied:
 
-After gaining significant experience in architecture, I'm interested in merging my design skills with my newfound passion for programming. I believe my architectural background gives me a unique perspective on programming and problem solving. Currently, I'm more inclined towards programming but am actively exploring hybrid roles that can synergize both fields.
+- **GeoSeries and GeoDataFrame**: These are the primary data structures in GeoPandas, which function similarly to Series and DataFrame in pandas.
+- **Reading and writing data**: I've looked into how GeoPandas can read and write data from multiple file formats.
+- **Geometric operations**: GeoPandas allows for operations such as intersections, unions, and differences between shapes.
+- **Spatial joins**: I've explored how GeoDataFrames can be joined based on their spatial relationships, much like a SQL JOIN operation but with a spatial twist.
 
-## Content
+### Resources Reviewed
 
-This repository documents my daily practice and learning progress in the following areas:
+1. [GeoPandas Official Documentation](https://geopandas.org/en/stable/)
+2. [GeoPandas User Guide](https://geopandas.org/en/stable/docs/user_guide.html)
+3. [Comparison of pandas with SQL](https://pandas.pydata.org/docs/getting_started/comparison/comparison_with_sql.html#compare-with-sql)
+4. [Getting Started with GeoPandas](https://geopandas.org/en/stable/getting_started/introduction.html)
+5. [10 Minutes to pandas](https://pandas.pydata.org/docs/user_guide/10min.html#min)
 
-- SQL queries
-- Programming tests from IndiaBIX
-- Learning Docker (yet to start)
-- Exploring Jira (yet to start)
-- Handling Geospatial data (yet to start)
-- IntelliJ Projects
-
-Each of these topics has a dedicated directory in this repository.
-
-## Repository Structure
-
-Each directory will have its README that gives a brief overview of the content and progress made in each area.
-
-```
-├── SQL Queries
-│   ├── README.md
-│   ├── queries.sql
-│   └── solutions.sql
-├── IndiaBIX Tests
-│   ├── README.md
-│   ├── test1.java
-│   ├── test2.java
-│   └── ...
-├── Docker
-│   └── README.md
-├── Jira
-│   └── README.md
-├── Geospatial Data
-│   └── README.md
-├── GeoPandas
-│   └── README.md
-└── IntelliJ Projects
-    ├── README.md
-    └── project_files
-```
-
-## Contact
-
-For more information, please feel free to [contact me](mailto:maria.st.radeva@gmail.com).
+This is just the beginning. I am excited to dive deeper into GeoPandas and start implementing my learning into practical projects.
