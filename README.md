@@ -28,12 +28,12 @@ Each directory will have its README that gives a brief overview of the content a
 ```
 ├── SQL Queries
 │   ├── README.md
-│   ├── queries.sql
-│   └── solutions.sql
+│   ├── hr_er.mwb
+│   ├── hr_er.mwb.bak
+│   └── sql_queries.sql
 ├── IndiaBIX Tests
 │   ├── README.md
-│   ├── test1.java
-│   ├── test2.java
+│   ├── test9_results.jpeg
 │   └── ...
 ├── Docker
 │   └── README.md
