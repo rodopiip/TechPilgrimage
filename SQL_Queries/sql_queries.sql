@@ -238,6 +238,62 @@ WHERE published_date > DATE_SUB(NOW(), INTERVAL 7 DAY);
 -- testing the view
 SELECT * FROM books_last_7_days;
 
+-- Write a SQL statement to create a table PUBLISHERS. Publishers should have
+-- a unique name (use unique constraint).
+
+CREATE TABLE publishers (
+	publisher_id INT NOT NULL,
+	title VARCHAR(255) NOT NULL UNIQUE
+);
+-- adding a pirmary key constraints
+ALTER TABLE publishers
+ADD PRIMARY KEY (publisher_id);
+
+-- Write a SQL statement to add a column publisher_id to the table BOOKS.
+-- Fill some data in this new column and as well in the PUBLISHERS table.
+-- Write a SQL statement to add a foreign key constraint between tables BOOKS and PUBLISHERS.
+
+ALTER TABLE books 
+ADD publisher_id INT,
+ADD CONSTRAINT fk_publisher
+FOREIGN KEY (publisher_id)
+REFERENCES publishers (publisher_id);
+
+-- Write SQL statements to insert several records in the BOOKS and
+-- PUBLISHERS tables.
+
+ALTER TABLE books 
+MODIFY COLUMN book_id INT AUTO_INCREMENT;
+
+ALTER TABLE books DROP FOREIGN KEY fk_publisher;
+
+ALTER TABLE publishers 
+MODIFY COLUMN publisher_id INT AUTO_INCREMENT;
+
+ALTER TABLE books
+ADD CONSTRAINT fk_publisher
+FOREIGN KEY (publisher_id)
+REFERENCES publishers (publisher_id);
+
+
+SELECT * FROM publishers;
+
+-- Insert into publishers
+INSERT INTO publishers(title)
+VALUES ('Publisher 1'), ('Publisher 2'), ('Publisher 3'), ('Publisher 4'), ('Publisher 5');
+
+-- Then, insert into books. Note that you don't need to specify the book_id and publisher_id, as they are auto-incremented.
+INSERT INTO books(title, author, published_date, number_of_pages, available, publisher_id)
+VALUES ('Book 20', 'Author 20', '2023-01-01', 200, 1, 1),
+       ('Book 21', 'Author 21', '2023-02-01', 210, 1, 2),
+       ('Book 22', 'Author 22', '2023-03-01', 220, 1, 3),
+       ('Book 23', 'Author 23', '2023-04-01', 230, 1, 4),
+       ('Book 24', 'Author 24', '2023-05-01', 240, 1, 5);
+       
+SELECT * FROM books;
+
+
+
 
 
 
