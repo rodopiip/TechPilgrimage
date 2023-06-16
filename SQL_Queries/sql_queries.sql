@@ -292,6 +292,61 @@ VALUES ('Book 20', 'Author 20', '2023-01-01', 200, 1, 1),
        
 SELECT * FROM books;
 
+-- versions
+SHOW VARIABLES LIKE "%version%";
+
+-- Write SQL statements to insert in the USERS table the names of all
+-- employees from the employees table. Combine the first and last names as a full name.
+-- For user name use the email column from employees. Use blank password.
+
+-- ALTERED 
+-- Write SQL statements to add a 'website' column to the PUBLISHERS table. 
+-- After that, insert into this new column, the respective websites for each publisher.
+-- Also add a 'contact_person' column, which should be filled with the full names (first name and last name combined)
+-- of the respective contact person from the EMPLOYEES table.
+-- If the publisher does not have a designated contact person, leave it as NULL.
+ALTER TABLE publishers
+ADD website VARCHAR(100);
+
+ALTER TABLE publishers
+ADD contact_person VARCHAR(100);
+
+UPDATE publishers 
+SET website = 'www.example.com';
+
+SELECT * FROM publishers;
+
+INSERT INTO publishers (title)
+SELECT last_name 
+FROM employees; 
+
+INSERT INTO publishers (contact_person)
+SELECT CONCAT(first_name, ' ', last_name)
+FROM employees
+WHERE employee_id % 2 = 0;
+
+INSERT INTO publishers (title, contact_person)
+SELECT CONCAT(last_name, '_', employee_id), 
+       CASE
+         WHEN employee_id % 2 = 0 THEN CONCAT(first_name, ' ', last_name)
+         ELSE NULL
+       END
+FROM employees;
+
+DESCRIBE publishers;
+
+ALTER TABLE publishers
+ALTER COLUMN contact_person SET DEFAULT 'blank',
+ALTER COLUMN website SET DEFAULT 'www.blank.com',
+ALTER COLUMN title SET DEFAULT 'no-title';
+
+INSERT INTO publishers(title)
+VALUES ('MariaRadeva');
+
+SELECT * FROM publishers;
+
+UPDATE publishers 
+SET contact_person = COALESCE(contact_person, 'default_value');
 
 
 
