@@ -16,6 +16,7 @@ Welcome to the **IndiaBix** folder. Here you will find detailed results of the O
 | 7           | 15/20 |
 | 8           | 12/20 |
 | 9           | 15/20 |
+| 10           | 12/20 |
 
 Note: These are the scores as of the current date (14.06.2023). The user is still undertaking more tests. Stay tuned for more updates.
 
