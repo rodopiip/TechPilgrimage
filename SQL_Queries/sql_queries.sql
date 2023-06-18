@@ -348,7 +348,46 @@ SELECT * FROM publishers;
 UPDATE publishers 
 SET contact_person = COALESCE(contact_person, 'default_value');
 
+-- Run the above 10 times to generate enough testing data for the USERS table.
 
+INSERT INTO publishers (title, contact_person)
+SELECT CONCAT(employee_id, '_', last_name), 
+       CASE
+         WHEN employee_id % 2 <> 0 THEN CONCAT(first_name, ' ', last_name)
+         ELSE NULL
+       END
+FROM employees;
+
+UPDATE publishers 
+SET contact_person = COALESCE(contact_person, 'no-contact');
+
+SELECT * FROM publishers;
+
+
+-- Write a SQL statement that changes the password to NULL for all
+-- USERS that have not been in the system since 10.03.2006. Select table data to see the
+-- changes.
+
+-- ALTERNATIVE for books & publishers:
+-- Write a SQL statement that changes the 'available' to FALSE for all
+-- BOOKS that have not been 'published_date' since 01.05.2023. 
+-- Select table data to see the changes.
+
+SELECT * FROM books;
+
+DESCRIBE books;
+
+DESCRIBE publishers;
+
+UPDATE books
+SET available = FALSE
+WHERE published_date < '2023-05-01';
+
+-- Write a SQL statement that deletes all BOOKS without a 'publisher_id' (NULL or
+-- empty 'publisher_id'). Select table data to see the changes.
+
+DELETE FROM books
+WHERE publisher_id IS NULL;
 
 
 
