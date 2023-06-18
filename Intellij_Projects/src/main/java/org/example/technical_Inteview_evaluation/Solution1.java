@@ -1,39 +1,21 @@
-import java.util.*;
+package org.example.technical_Inteview_evaluation;
+
+import java.util.Scanner;
+
 import java.lang.*;
-import java.io.*;
 
 /*
  * inputNum, representing the array with size of inputNum_size.
  * size, representing the total number of pages.
  */
-public class Solution2
+public class Solution1
 {
     public static int  cacheMisses(int[] inputNum, int size)
     {
         int  answer = 0;
         // Write your code here
 
-        HashSet<Integer> cache = new HashSet<>(size);
-        List<Integer> queue = new LinkedList<>();
 
-        for (int page : inputNum){
-            //cache hit
-            if(cache.contains(page)){
-                queue.remove(page);
-                queue.addFirst(page);
-            } else{
-                //cache miss
-                answer++;
-                //check for full  cache
-                if(queue.size()==size){
-                    int last = queue.removeLast();
-                    cache.remove(last);
-                }
-            }
-            //current page - added to cache
-            cache.add(page);
-            queue.addFirst(page);
-        }
 
         //the number of times a page is requested,
         //but is not found in the cache
