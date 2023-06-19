@@ -389,6 +389,65 @@ WHERE published_date < '2023-05-01';
 DELETE FROM books
 WHERE publisher_id IS NULL;
 
+-- Practicing UNIONS
 
+SELECT department_id FROM departments
+UNION
+SELECT department_id FROM employees;
 
+-- Write a SQL query to list all publishers whose title starts with 's' 
+-- and the number of books published by each of them.
 
+SELECT * FROM publishers;
+SELECT * FROM books;
+DESCRIBE books;
+DESCRIBE publishers;
+
+INSERT INTO books (title, author, published_date, number_of_pages, available, publisher_id)
+VALUES 
+    ('To Kill a Mockingbird', 'Harper Lee', '2023-01-01', 281, 1, 252),
+    ('1984', 'George Orwell', '2023-01-02', 328, 1, 253),
+    ('The Great Gatsby', 'F. Scott Fitzgerald', '2023-01-03', 180, 1, 254),
+    ('One Hundred Years of Solitude', 'Gabriel Garcia Marquez', '2023-01-04', 417, 1, 255),
+    ('Moby Dick', 'Herman Melville', '2023-01-05', 585, 1, 256),
+    ('War and Peace', 'Leo Tolstoy', '2023-01-06', 1225, 1, 257),
+    ('The Catcher in the Rye', 'J.D. Salinger', '2023-01-07', 277, 1, 258),
+    ('The Hobbit', 'J.R.R. Tolkien', '2023-01-08', 310, 1, 259),
+    ('Fahrenheit 451', 'Ray Bradbury', '2023-01-09', 249, 1, 260),
+    ('Crime and Punishment', 'Fyodor Dostoevsky', '2023-01-10', 671, 1, 261),
+    ('The Odyssey', 'Homer', '2023-01-11', 500, 1, 262),
+    ('Ulysses', 'James Joyce', '2023-01-12', 730, 1, 263),
+    ('Pride and Prejudice', 'Jane Austen', '2023-01-13', 279, 1, 264),
+    ('Jane Eyre', 'Charlotte Bronte', '2023-01-14', 512, 1, 265),
+    ('The Divine Comedy', 'Dante Alighieri', '2023-01-15', 798, 1, 266),
+    ('The Adventures of Huckleberry Finn', 'Mark Twain', '2023-01-16', 366, 1, 267),
+    ('Wuthering Heights', 'Emily Bronte', '2023-01-17', 464, 1, 268),
+    ('Anna Karenina', 'Leo Tolstoy', '2023-01-18', 964, 1, 269),
+    ('Alice\'s Adventures in Wonderland', 'Lewis Carroll', '2023-01-19', 96, 1, 270),
+    ('Catch-22', 'Joseph Heller', '2023-01-20', 453, 1, 271);
+
+SELECT p.title, COUNT(b.book_id)
+FROM publishers p
+JOIN books b
+ON p.publisher_id = b.publisher_id
+WHERE p.title LIKE ('%1%')
+GROUP BY p.title;
+
+-- Define table BOOK_REVIEWS to store reviews for each book
+-- (review_date, book_id, review_content, reviewer_name, rating).
+
+CREATE TABLE book_reviews (
+	review_date DATE NOT NULL,
+    book_id INT NOT NULL,
+    review_content VARCHAR(255),
+    reviewer_name VARCHAR (30),
+    rating INT DEFAULT 0
+);
+
+CREATE TRIGGER date_trigger
+		BEFORE INSERT 
+        ON book_reviews 
+        FOR EACH ROW
+        SET NEW.review_date = NOW();
+        
+-- create relation between books and book_reviews tables
