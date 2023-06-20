@@ -8,7 +8,7 @@ Please refer to the individual sub-project directories for more information abou
 
 Here are 2 problems I will try to solve in the next few days (as of 19.6.23) as part of my technical interview preparation:
 
-### 1. [ClassHierarchyManagement.java](src/main/java/org/example/technical_Inteview_evaluation/ClassHierarchyManagement.java)
+### 1. [ClassHierarchyManagement.java](src/main/java/org/example/technical_Inteview_evaluation/class_hierarchy_management)
 
 A company is implementing an HR system. They need a way to manage their organization's hierarchy. They have a simple rule: A Manager can have multiple Employees reporting to them, but an Employee can have only one Manager.
 
