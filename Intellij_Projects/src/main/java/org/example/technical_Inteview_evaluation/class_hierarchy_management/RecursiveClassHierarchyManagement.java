@@ -1,8 +1,8 @@
-package org.example.technical_Inteview_evaluation;
+package org.example.technical_Inteview_evaluation.class_hierarchy_management;
 
 import java.util.*;
 
-public class ClassHierarchyManagement {
+public class RecursiveClassHierarchyManagement {
     /*
     A company is implementing an HR system.
     They need a way to manage their organization's hierarchy.
@@ -21,52 +21,62 @@ public class ClassHierarchyManagement {
     Note: A Manager who does not report to anyone
         is considered the head of the hierarchy.
      */
-
+    /*
+    note:
+     collections are static class variables instead of
+     method variables for the purpose of maintaining their
+     state across multiple method calls
+    */
     //collection for relationships
-    static Map<String, List<String>> map;
+    static Map<String, List<String>> employeeToSubordinates;
     //collection for employees
     static Set<String> employees;
     private static void hierarchize(String[] workRelationships) {
         //1. initialize the static collection
-        map = new HashMap<>();
+        employeeToSubordinates = new HashMap<>();
         employees = new HashSet<>();
         //2. iterate over workRelationships array
         for (String workRelationship : workRelationships){
             String[]pair = workRelationship.split(" ");
-            String employee = pair[0];
-            String manager = pair[1];
+            String manager = pair[0];
+            String employee = pair[1];
             //employee -> hashSet
             employees.add(employee);
-            if (manager.equals("None")){
-                continue;
-            }
             //relationship -> hashMap
-            map.putIfAbsent(manager, new ArrayList<>());
-            map.get(manager).add(employee);
+            employeeToSubordinates.putIfAbsent(manager, new ArrayList<>());
+            employeeToSubordinates.get(manager).add(employee);
         }
         //3. locate the highest manager (tree root)
-        //todo: explain via comments
-        String root = null;
-        for (String manager : map.keySet()){
-            if (!employees.equals(manager)){
-                root = manager;
-                break;
+        String root = employeeToSubordinates.keySet().stream()
+                .filter(manager -> !employees.contains(manager))
+                .findFirst().orElse(null);
+        //4. use a recursive method for printing the hierarchy
+        printHierarchy(root, "");
+    }
+    //define a recursive method for printing the hierarchy
+    public static void printHierarchy(String manager, String indentation){
+        //print the current manager with their respective indentation,
+        //signifying their rank
+        System.out.println(indentation+manager);
+        //if the manager has employees
+        //(if they are an actual manager),
+        //call the recursive method for each employee
+        //while increasing the indentation
+        if (employeeToSubordinates.containsKey(manager)){
+            for (String employee : employeeToSubordinates.get(manager)){
+                printHierarchy(employee, indentation + " ");
             }
         }
-        //todo: 4. I sense a recursion.
-
-        //todo: 5. display the names with indentation,
-        // that matches the index.
-
     }
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         //1. input for total number of employees
         int entry_size = scanner.nextInt();
         //2. n lines for Employee-Manager relationship - for loop
+        scanner.nextLine(); // consume newline
         String work_relationships[] = new String[entry_size];
         for (int i = 0; i<entry_size; i++){
-            work_relationships[i] = scanner.next();
+            work_relationships[i] = scanner.nextLine();
         }
         //3. method()
         hierarchize(work_relationships);
