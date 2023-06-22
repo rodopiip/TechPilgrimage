@@ -38,7 +38,7 @@ Eve
 
 ---
 
-### 2. [SortingAlgorithmEfficiency.java](/src/main/java/org/example/technical_Inteview_evaluation/SortingAlgorithmEfficiency.java)
+### 2. [SortingAlgorithmEfficiency.java](src/main/java/org/example/technical_Inteview_evaluation/SortingAlgorithmEfficiency.java)
 
 You have been tasked with evaluating the efficiency of different sorting algorithms in Java. You will be provided with an array of integers and your task is to apply different sorting algorithms, measure their execution time, and determine the most efficient one.
 
