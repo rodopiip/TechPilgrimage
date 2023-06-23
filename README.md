@@ -4,6 +4,9 @@
 
 Hello! I am an architectural graduate with a master's degree in architecture, and I have recently completed a 6-month course in Java focusing on backend development. The aim of this repository is to document my journey as I expand my skill set in the tech industry.
 
+## Update
+As of 23.06.23 I have automatically started pushing my Leetcode coding solutions to GitHub via the [LeetHUb v2](https://chrome.google.com/webstore/detail/leethub-v2/mhanfgfagplhgemhjfeolkkdidbakocm) Chrome extention.
+
 ## Interests and Objectives
 
 After gaining significant experience in architecture, I'm interested in merging my design skills with my newfound passion for programming. I believe my architectural background gives me a unique perspective on programming and problem solving. Currently, I'm more inclined towards programming but am actively exploring hybrid roles that can synergize both fields.
@@ -12,6 +15,7 @@ After gaining significant experience in architecture, I'm interested in merging 
 
 This repository documents my daily practice and learning progress in the following areas:
 
+- LeetCode solutions
 - SQL queries
 - Programming tests from IndiaBIX
 - Learning Docker (yet to start)
@@ -26,6 +30,7 @@ Each of these topics has a dedicated directory in this repository.
 Each directory will have its README that gives a brief overview of the content and progress made in each area.
 
 ```
+├── Leetcode
 ├── SQL Queries
 │   ├── README.md
 │   ├── hr_er.mwb
